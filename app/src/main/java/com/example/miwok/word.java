@@ -10,11 +10,14 @@ public class word {
     //for miwok Translation
     private  String mMiwokTranslation;
 
-    // For Image view for Numbers Activity Layout
+    // For Image view for Activity
     private int NO_IMAGE_PROVIDED = -1;
 
     // for imageResource Id for textView Container Background
     private int imageResourceId = NO_IMAGE_PROVIDED;
+
+    // for Audio Resource Id
+    private int AudioResourceId;
 
 
 
@@ -24,10 +27,11 @@ public class word {
      *@param miwokTranslation is the word in the English Language
      */
 
-    public word(String DefaultTranslation, String miwokTranslation,int Image_id){
+    public word(String DefaultTranslation, String miwokTranslation,int Image_id,int AudioResource){
         mDefaultTranslation = DefaultTranslation;
         mMiwokTranslation = miwokTranslation;
         imageResourceId = Image_id;
+        AudioResourceId = AudioResource;
         }
 
 
@@ -37,9 +41,10 @@ public class word {
      * @param  mDefaultTranslation
      * @param  mMiwokTranslation
      */
-    public word(String mDefaultTranslation,String mMiwokTranslation){
+    public word(String mDefaultTranslation,String mMiwokTranslation,int AudioResource){
         this.mDefaultTranslation = mDefaultTranslation;
         this.mMiwokTranslation = mMiwokTranslation;
+        AudioResourceId = AudioResource;
     }
 
     // To Get Miwok word
@@ -58,7 +63,8 @@ public class word {
     // To Check View Contains Image OR not
     public boolean hasImage(){ return imageResourceId != NO_IMAGE_PROVIDED; }
 
-
+    // To Get Miwok Translation audio
+    public  int getAudioResourceId(){ return AudioResourceId; }
 
 
 }
